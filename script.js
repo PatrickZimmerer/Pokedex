@@ -1,243 +1,56 @@
 let currentPokemon;
 let currentPokemonImg;
 
-async function loadPokemon(){
-    let url = `https://pokeapi.co/api/v2/pokemon/charmander`;
+/* async function loadPokemon(){
+    let url = `https://pokeapi.co/api/v2/pokemon/charizard`;
     let response = await fetch(url);
     let currentPokemon = await response.json();
+    let currentPokemonType = currentPokemon['types'][0]['type']['name'];
     let currentPokemonImg = currentPokemon['sprites']['other']['home']['front_default'];
-    renderPokemonInfo(currentPokemon, currentPokemonImg);
-    console.log(currentPokemon);
-    console.log(currentPokemon['name']);
-    console.log(currentPokemon['id']);
-    console.log(currentPokemon['types'][0]['type']['name']);
-    console.log(currentPokemon['sprites']['other']['home']['front_default']);
+    renderPokemonInfo(currentPokemon, currentPokemonImg, currentPokemonType);
+} */
+async function loadPokemon(){
+    for (let i = 1; i < 152; i++) {
+        let url = `https://pokeapi.co/api/v2/pokemon/${i}`;
+        let response = await fetch(url);
+        let responseAsJson = await response.json();
+        showPokemon(responseAsJson);
+        //console.log(responseAsJson);
+    }
 }
-function renderPokemonInfo(currentPokemon, currentPokemonImg){
-    document.getElementById('pokeWrap').innerHTML = `<!--html-->
+
+function showPokemon(responseAsJson){
+    let PokemonId = responseAsJson['id']
+    let PokemonName = responseAsJson['name'];
+    let PokemonType = responseAsJson['types'][0]['type']['name'];
+    let PokemonImg = responseAsJson['sprites']['other']['home']['front_default'];    
+    console.log(PokemonName, PokemonId, PokemonType, PokemonImg);
+    renderPokemon(PokemonId, PokemonName, PokemonType, PokemonImg);
+}
+
+function renderPokemon(PokemonId, PokemonName, PokemonType, PokemonImg){
+    document.getElementById('pokeWrap').innerHTML += `<!--html-->
     <div class="pokeContainer red">
         <div class="pokeId">
-            <p> #${currentPokemon['id']} </p> 
+            <p> #${PokemonId} </p> 
         </div>
+        
         <div class="pokeNameTypeContainer">
-            <h2 class="ucwords" class="pokeName"> ${currentPokemon['name']} </h2> 
+            <h2 class="ucwords" class="pokeName">
+                ${PokemonName} 
+                </h2> 
             <span class="badge rounded-pill bg-danger"> 
-                <p class="pokeType ucwords">${currentPokemon['types'][0]['type']['name']}</p>
+                <p class="pokeType ucwords">
+                    ${PokemonType}
+                </p>
             </span>  
         </div>       
              
         <div class="pokeImgContainer">
-            <img src="${currentPokemonImg}" class="pokeImg" >  
+            <img src="${PokemonImg}" class="pokeImg" >  
         </div>
-    </div>
-    
-    <div class="pokeContainer red">
-        <div class="pokeId">
-            <p> #${currentPokemon['id']} </p> 
-        </div>
-        <div class="pokeNameTypeContainer">
-            <h2 class="ucwords" class="pokeName"> ${currentPokemon['name']} </h2> 
-            <span class="badge rounded-pill bg-danger"> 
-                <p class="pokeType ucwords">${currentPokemon['types'][0]['type']['name']}</p>
-            </span>  
-        </div>       
-             
-        <div class="pokeImgContainer">
-            <img src="${currentPokemonImg}" class="pokeImg" >  
-        </div>
-    </div>
-   
-    
-    <div class="pokeContainer red">
-        <div class="pokeId">
-            <p> #${currentPokemon['id']} </p> 
-        </div>
-        <div class="pokeNameTypeContainer">
-            <h2 class="ucwords" class="pokeName"> ${currentPokemon['name']} </h2> 
-            <span class="badge rounded-pill bg-danger"> 
-                <p class="pokeType ucwords">${currentPokemon['types'][0]['type']['name']}</p>
-            </span>  
-        </div>       
-             
-        <div class="pokeImgContainer">
-            <img src="${currentPokemonImg}" class="pokeImg" >  
-        </div>
-    </div>
-    
-    <div class="pokeContainer red">
-        <div class="pokeId">
-            <p> #${currentPokemon['id']} </p> 
-        </div>
-        <div class="pokeNameTypeContainer">
-            <h2 class="ucwords" class="pokeName"> ${currentPokemon['name']} </h2> 
-            <span class="badge rounded-pill bg-danger"> 
-                <p class="pokeType ucwords">${currentPokemon['types'][0]['type']['name']}</p>
-            </span>  
-        </div>       
-             
-        <div class="pokeImgContainer">
-            <img src="${currentPokemonImg}" class="pokeImg" >  
-        </div>
-    </div>
-    
-    <div class="pokeContainer red">
-        <div class="pokeId">
-            <p> #${currentPokemon['id']} </p> 
-        </div>
-        <div class="pokeNameTypeContainer">
-            <h2 class="ucwords" class="pokeName"> ${currentPokemon['name']} </h2> 
-            <span class="badge rounded-pill bg-danger"> 
-                <p class="pokeType ucwords">${currentPokemon['types'][0]['type']['name']}</p>
-            </span>  
-        </div>       
-             
-        <div class="pokeImgContainer">
-            <img src="${currentPokemonImg}" class="pokeImg" >  
-        </div>
-    </div>
-    
-    <div class="pokeContainer red">
-        <div class="pokeId">
-            <p> #${currentPokemon['id']} </p> 
-        </div>
-        <div class="pokeNameTypeContainer">
-            <h2 class="ucwords" class="pokeName"> ${currentPokemon['name']} </h2> 
-            <span class="badge rounded-pill bg-danger"> 
-                <p class="pokeType ucwords">${currentPokemon['types'][0]['type']['name']}</p>
-            </span>  
-        </div>       
-             
-        <div class="pokeImgContainer">
-            <img src="${currentPokemonImg}" class="pokeImg" >  
-        </div>
-    </div>
-    
-    <div class="pokeContainer red">
-        <div class="pokeId">
-            <p> #${currentPokemon['id']} </p> 
-        </div>
-        <div class="pokeNameTypeContainer">
-            <h2 class="ucwords" class="pokeName"> ${currentPokemon['name']} </h2> 
-            <span class="badge rounded-pill bg-danger"> 
-                <p class="pokeType ucwords">${currentPokemon['types'][0]['type']['name']}</p>
-            </span>  
-        </div>       
-             
-        <div class="pokeImgContainer">
-            <img src="${currentPokemonImg}" class="pokeImg" >  
-        </div>
-    </div>
-    
-    <div class="pokeContainer red">
-        <div class="pokeId">
-            <p> #${currentPokemon['id']} </p> 
-        </div>
-        <div class="pokeNameTypeContainer">
-            <h2 class="ucwords" class="pokeName"> ${currentPokemon['name']} </h2> 
-            <span class="badge rounded-pill bg-danger"> 
-                <p class="pokeType ucwords">${currentPokemon['types'][0]['type']['name']}</p>
-            </span>  
-        </div>       
-             
-        <div class="pokeImgContainer">
-            <img src="${currentPokemonImg}" class="pokeImg" >  
-        </div>
-    </div>
-    
-    <div class="pokeContainer red">
-        <div class="pokeId">
-            <p> #${currentPokemon['id']} </p> 
-        </div>
-        <div class="pokeNameTypeContainer">
-            <h2 class="ucwords" class="pokeName"> ${currentPokemon['name']} </h2> 
-            <span class="badge rounded-pill bg-danger"> 
-                <p class="pokeType ucwords">${currentPokemon['types'][0]['type']['name']}</p>
-            </span>  
-        </div>       
-             
-        <div class="pokeImgContainer">
-            <img src="${currentPokemonImg}" class="pokeImg" >  
-        </div>
-    </div>
-    
-    <div class="pokeContainer red">
-        <div class="pokeId">
-            <p> #${currentPokemon['id']} </p> 
-        </div>
-        <div class="pokeNameTypeContainer">
-            <h2 class="ucwords" class="pokeName"> ${currentPokemon['name']} </h2> 
-            <span class="badge rounded-pill bg-danger"> 
-                <p class="pokeType ucwords">${currentPokemon['types'][0]['type']['name']}</p>
-            </span>  
-        </div>       
-             
-        <div class="pokeImgContainer">
-            <img src="${currentPokemonImg}" class="pokeImg" >  
-        </div>
-    </div>
-    
-    <div class="pokeContainer red">
-        <div class="pokeId">
-            <p> #${currentPokemon['id']} </p> 
-        </div>
-        <div class="pokeNameTypeContainer">
-            <h2 class="ucwords" class="pokeName"> ${currentPokemon['name']} </h2> 
-            <span class="badge rounded-pill bg-danger"> 
-                <p class="pokeType ucwords">${currentPokemon['types'][0]['type']['name']}</p>
-            </span>  
-        </div>       
-             
-        <div class="pokeImgContainer">
-            <img src="${currentPokemonImg}" class="pokeImg" >  
-        </div>
-    </div>
-    
-    <div class="pokeContainer red">
-        <div class="pokeId">
-            <p> #${currentPokemon['id']} </p> 
-        </div>
-        <div class="pokeNameTypeContainer">
-            <h2 class="ucwords" class="pokeName"> ${currentPokemon['name']} </h2> 
-            <span class="badge rounded-pill bg-danger"> 
-                <p class="pokeType ucwords">${currentPokemon['types'][0]['type']['name']}</p>
-            </span>  
-        </div>       
-             
-        <div class="pokeImgContainer">
-            <img src="${currentPokemonImg}" class="pokeImg" >  
-        </div>
-    </div>
-    
-    <div class="pokeContainer red">
-        <div class="pokeId">
-            <p> #${currentPokemon['id']} </p> 
-        </div>
-        <div class="pokeNameTypeContainer">
-            <h2 class="ucwords" class="pokeName"> ${currentPokemon['name']} </h2> 
-            <span class="badge rounded-pill bg-danger"> 
-                <p class="pokeType ucwords">${currentPokemon['types'][0]['type']['name']}</p>
-            </span>  
-        </div>       
-             
-        <div class="pokeImgContainer">
-            <img src="${currentPokemonImg}" class="pokeImg" >  
-        </div>
-    </div>
-    
-    <div class="pokeContainer red">
-        <div class="pokeId">
-            <p> #${currentPokemon['id']} </p> 
-        </div>
-        <div class="pokeNameTypeContainer">
-            <h2 class="ucwords" class="pokeName"> ${currentPokemon['name']} </h2> 
-            <span class="badge rounded-pill bg-danger"> 
-                <p class="pokeType ucwords">${currentPokemon['types'][0]['type']['name']}</p>
-            </span>  
-        </div>       
-             
-        <div class="pokeImgContainer">
-            <img src="${currentPokemonImg}" class="pokeImg" >  
-        </div>
-    </div>
+    </div
     `;
 }
+
+

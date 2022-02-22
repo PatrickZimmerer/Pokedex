@@ -42,7 +42,7 @@ div>p{
     color: white;
 }
 .red{
-    background-color: #C73B37;
+    background-color: #c73b37f0;
 }
 .green{
     background-color: #36996D;
@@ -71,11 +71,11 @@ div>p{
 }
 .pokeImg{
     height: 180px;
-    transform: scale3d(1.0, 1.0, 1.0);
+    transform: scale3d(1.0, 1.0, 1.0) translateX(0px) translateY(0px);
     transition: transform 250ms ease-in-out;
 }
 .pokeImg:hover{
-    transform: scale3d(1.12, 1.2, 1.2);
+    transform: scale3d(1.25, 1.25, 1.25) translateX(-25px) translateY(-10px);
 }
 .pokeWrap{
     display: flex;
@@ -89,8 +89,12 @@ div>p{
     display: flex;
     flex-direction: column;
     width: 420px;
-    margin: 16px 8px 0px;
+    margin: 16px 8px 0px 8px ;
     cursor: pointer;
+    transition: ease-in-out 150ms;
+}
+.pokeContainer:hover{
+    background-color: #c73c37fa;
 }
 .pokeId{
     display: flex;
@@ -98,15 +102,21 @@ div>p{
     padding: 0px 16px;
 }
 .pokeNameTypeContainer{
-    display: flex;
-    flex-direction: column;
+    position: relative;
     padding: 0px 16px;
 
 }
+.pokeNameTypeContainer h2{
+    position: relative;
+    top: 0px;
+    left: 16px;
+}
 .pokeNameTypeContainer span{
-    margin-left: 32px;
-    border: 1px red solid;
-    width: 70px;
+    position: relative;
+    top: 0px;
+    left: 24px;
+    border: 1px  ;
+    width: 90px;
     text-align: center;
     
 
@@ -116,4 +126,7 @@ div>p{
     justify-content: flex-end;
     padding: 0 16px 16px 0;
     margin-top: -100px;
+}
+.pokeBody{
+    display: flex;
 }
