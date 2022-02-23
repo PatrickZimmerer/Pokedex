@@ -45,177 +45,6 @@ div>p{
 .ucwords { 
     text-transform: capitalize; 
 }
-/*.grass,.fire,.water,.electric,.normal,.bug,.ice,.fighting,.ground
-.rock,.dark,.water,.electric,.normal,.brown,.grey,.purple,.purple {
-    color: white;
-}*/
-
-/*.red:hover{
-    background-color: #c73c37fa;
-}*/
-.grass{
-    background-color: #36996D;
-}
-.grass-side{
-    color: #157649;
-}
-.bg-grass-pill{
-    background-color: #198754;
-}
-.fire{
-    background-color: #dc3545;
-}
-.fire-side{
-    color: #8c2827bd;
-}
-.bg-fire-pill{
-    background-color: #bb3835;
-}
-.water{
-    background-color: #2557a8;
-}
-.water-side{
-    color: #16386e;
-}
-.bg-water-pill{
-    background-color: #1d4990;
-}
-.electric{
-    background-color: #EDA926;
-}
-.electric-side{
-    color: hsl(43deg 89% 44%);
-}
-.bg-electric-pill{
-    background-color: #c58c22;
-}
-.normal{
-    background-color: hsl(41deg 14% 58%);
-}
-.normal-side{
-    color:hsl(40deg 19% 45%) ;
-}
-.bg-normal-pill{
-    background-color: rgb(148, 134, 110);
-}
-.bug{
-    background-color: hsl(66deg 79% 37%);
-}
-.bug-side{
-    color: rgb(71, 78, 10);
-}
-.bg-bug-pill{
-    background-color: rgb(101, 110, 13);
-}
-.ice{
-    background-color: hsl(190deg 70% 60%);
-}
-.ice-side{
-    color: hsl(191deg 82% 41%);
-}
-.bg-ice-pill{
-    background-color: hsl(192deg 64% 49%);
-}
-.fighting{
-    background-color: hsl(14deg 50% 41%);
-}
-.fighting-side{
-    color: hsl(12deg 65% 28%);
-}
-.bg-fighting-pill{
-    background-color: hsl(12deg 55% 37%);
-}
-.ground{
-    background-color: hsl(43deg 55% 55%);
-}
-.ground-side{
-    color: hsl(43deg 72% 38%);
-}
-.bg-ground-pill{
-    background-color: hsl(44deg 53% 49%);
-}
-.rock{
-    background-color: hsl(46deg 42% 54%);
-}
-.rock-side{
-    color: hsl(46deg 55% 40%);
-}
-.bg-rock-pill{
-    background-color: hsl(47deg 41% 49%);
-}
-.dark{
-    background-color: hsl(23deg 20% 35%);
-}
-.dark-side{
-    color: hsl(19deg 22% 22%);
-}
-.bg-dark-pill{
-    background-color: hsl(25deg 22% 29%);
-}
-.poison{
-    background-color: hsl(309deg 37% 51%);
-}
-.poison-side{
-    color: hsl(311deg 46% 35%);
-}
-.bg-poison-pill{
-    background-color: hsl(311deg 37% 46%);
-}
-.psychic{
-    background-color: hsl(337deg 87% 68%);
-}
-.psychic-side{
-    color: hsl(337deg 59% 48%);
-}
-.bg-psychic-pill{
-    background-color: hsl(337deg 72% 62%);
-}
-.fairy{
-    background-color: hsl(298deg 56% 75%);
-}
-.fairy-side{
-    color: hsl(300deg 46% 62%);
-}
-.bg-fairy-pill{
-    background-color: hsl(300deg 49% 68%);
-}
-.ghost{
-    background: hsl(240deg 33% 53%);
-}
-.ghost-side{
-    color: hsl(240deg 37% 46%);
-}
-.bg-ghost-pill{
-    background-color: hsl(240deg 45% 38%);
-}
-.dragon{
-    background: hsl(252deg 70% 62%);
-}
-.dragon-side{
-    color: hsl(252deg 60% 48%);
-}
-.bg-dragon-pill{
-    background-color: hsl(252deg 62% 55%);
-}
-.steel{
-    background: hsl(240deg 18% 72%);
-}
-.steel-side{
-    color: hsl(243deg 16% 55%);
-}
-.bg-steel-pill{
-    background-color: hsl(242deg 17% 63%);
-}
-.flying{
-    background: hsl(229deg 80% 77%);
-}
-.flying-side{
-    color: hsl(229deg 58% 63%);
-}
-.bg-flying-pill{
-    background-color: hsl(228deg 71% 71%);
-}
-
 
 .pokedex{
     padding: 8px 0px;
@@ -230,7 +59,7 @@ div>p{
     transition: transform 250ms ease-in-out;
 }
 .pokeImg:hover{
-    transform: scale3d(1.25, 1.25, 1.25) translateX(-25px) translateY(-10px);
+    transform: scale3d(1.25, 1.25, 1.25) translateX(-25px) translateY(-8px);
 }
 .pokeWrap{
     display: flex;
@@ -253,31 +82,24 @@ div>p{
     justify-content: flex-end;
     padding: 0px 16px;
 }
-.pokeNameTypeContainer{
-    position: relative;
-    padding: 0px 16px;
-
+.pokeBodyContainer{
+    display: flex;
+    justify-content: space-between;
+    height: 200px;
 }
-.pokeNameTypeContainer h2{
-    position: relative;
-    top: 0px;
-    left: 16px;
+.pokeNameTypeContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 16px;
 }
 .pokeNameTypeContainer span{
-    position: relative;
-    top: 0px;
-    left: 24px;
-    border: 1px  ;
     width: 90px;
-    text-align: center;
-    
-
 }
 .pokeImgContainer{
     display: flex;
     justify-content: flex-end;
     padding: 0 16px 16px 0;
-    margin-top: -100px;
 }
 .pokeBody{
     display: flex;
