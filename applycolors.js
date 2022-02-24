@@ -1,7 +1,7 @@
-function applyBackgrounds(PokemonType, i){
+function applyBackgrounds(responseAsJson, PokemonType, i){
     console.log(PokemonType);
     if (PokemonType == 'grass') {
-        getById('container-'+i).classList.add('grass');
+        getById('container-'+i).classList.add(`${PokemonType}`);
         getById('id-'+i).classList.add('grass-side');
         getById('type-1-'+i).classList.add('bg-grass-pill');
         //getById('type-2-'+i).classList.add('bg-success');
@@ -90,6 +90,23 @@ function applyBackgrounds(PokemonType, i){
         getById('container-'+i).classList.add('flying');
         getById('id-'+i).classList.add('flying-side');
         getById('type-1-'+i).classList.add('bg-flying-pill');
+    } 
+    checkSecondType(responseAsJson, i);  
+}
+function checkSecondType(responseAsJson, i){
+    let secondType = responseAsJson['types'][1];
+    if (secondType){
+        console.log("true");
+        applySecondType(responseAsJson, i)
     }
-    
+
+}
+function applySecondType(responseAsJson, i){
+    let secondPokemonType = responseAsJson['types'][1]['type']['name'];
+    getById('type-2-'+i).classList.add('badge',`bg-${secondPokemonType}-pill`,'rounded-pill');
+    getById('type-2-'+i).innerHTML += `
+    <p class="pokeType ucwords">
+        ${secondPokemonType}
+    </p> 
+    `;
 }

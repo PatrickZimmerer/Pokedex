@@ -4,6 +4,7 @@ function getById(id){
     return document.getElementById(id);
 }
 
+
 window.onscroll = async function loadMorePokemon() {
     if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) {
         atTheBottom++;
@@ -26,7 +27,6 @@ async function loadPokemon(){
         let response = await fetch(url);
         let responseAsJson = await response.json();
         showPokemon(responseAsJson, i);
-        //console.log(responseAsJson);
     }
 }
 function showPokemon(responseAsJson, i){
@@ -40,7 +40,9 @@ function showPokemon(responseAsJson, i){
 }
 function renderPokemon(responseAsJson, PokemonId, PokemonName, PokemonType ,PokemonImg, i){
     getById('pokeWrap').innerHTML += ` 
-    <div onclick="showDetails(responseAsJson, i)" id='container-${i}' class="pokeContainer">
+    <div onclick="showDetails(${responseAsJson}${i}${PokemonId}
+        ${PokemonName}${PokemonType}${PokemonImg})" 
+    id='container-${i}' class="pokeContainer">
         <div class="pokeId">
             <p id="id-${i}" class="id"> #${PokemonId} </p> 
         </div>
@@ -57,6 +59,9 @@ function renderPokemon(responseAsJson, PokemonId, PokemonName, PokemonType ,Poke
                         ${PokemonType}
                     </p>
                 </span> 
+                <span id="type-2-${i}">
+                    
+                </span>
             </div>       
              
             <div class="pokeImgContainer">
@@ -65,20 +70,17 @@ function renderPokemon(responseAsJson, PokemonId, PokemonName, PokemonType ,Poke
         </div>
     </div
     `;
-    applyBackgrounds(PokemonType, i);
-    
+    applyBackgrounds(responseAsJson, PokemonType, i);
+    /*checkSecondType(responseAsJson, i); */ 
 }
-
-function showDetails(responseAsJson, i){
-    getById('pokeWrap').classList.add('d-none');
-}
-
-
 /*
-, PokemonTypeSecond
-<span id="type-2-${i}" class="badge rounded-pill">
-<p class="pokeType ucwords">
-    ${PokemonTypeSecond}
-</p>
-</span>  
+function showDetails(responseAsJson, PokemonId, PokemonName, PokemonType ,PokemonImg, i){
+    let PokemonHeight = responseAsJson['height'];
+    let PokemonWeight = responseAsJson['weight'];
+    let PokemonBaseAbilities = responseAsJson['ability'][j]['ability']['name'];
+    let PokemonBaseExp = responseAsJson['base_experience'];
+    let PokemonStats = responseAsJson['stats'][k]['base_stat'];
+    let PokemonMoves = responseAsJson['moves'][l]['move']['name'];
+
+}
 */

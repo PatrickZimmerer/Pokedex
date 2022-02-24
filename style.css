@@ -6,17 +6,20 @@ body{
     scroll-behavior: smooth;
     color: white;
 }
+.d-none{
+    display: none;
+}
 nav{
     background-color:#000000e8;
     display: flex;
     justify-content: center;
 }
 nav img{
-    height: 80px;
+    height: 100px;
     padding: 16px 8px;
     cursor: pointer;
 }
-h1, h2{
+h1, h2, h3{
     margin-block-start: 0;
     margin-block-end: 0;
 }
