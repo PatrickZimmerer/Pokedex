@@ -59,7 +59,7 @@ div>p{
 .pokeImg{
     height: 180px;
     transform: scale3d(1.0, 1.0, 1.0) translateX(0px) translateY(0px);
-    transition: transform 250ms ease-in-out;
+    transition: transform 200ms ease-in-out;
 }
 .pokeImg:hover{
     transform: scale3d(1.25, 1.25, 1.25) translateX(-25px) translateY(-8px);

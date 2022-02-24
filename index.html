@@ -21,133 +21,21 @@
 </head>
 <body onload="loadPokemon()">
 
-<div id="pokeWrapBig" class="pokeWrapBig d-none">
-    <div class="pokeHeadBig">
-        <div>
-            <img onclick="showAll()" src="./img/arrow_back_white_36dp.svg">
-        </div>
-        <div>
-            <img id="like" src="./img/favorite_border_white_36dp.svg">
-        </div>
-    </div>    
 
-    <div class="pokeBodyBig">
-        <div class="pokeBodyContainerBig">
-            <div class="pokeNameTypeContainerBig">
-                <div>
-                <h2 class="ucwords" class="pokeNameBig">
-                    ${PokemonName} 
-                </h2> 
-                </div>
-                <div class="span-wrap">
-                <span id="type-1-${i}" class="badge rounded-pill"> 
-                <p class="pokeType ucwords">
-                    ${PokemonType}
-                </p>
-                </span> 
-                <span id="type-2-${i}">
-                    ${PokemonType2}
-                </span>
-                </div>
-            </div>  
 
-            <div class="pokeIdBig">
-                <p id="id-${i}" class="idBig"> #${PokemonId} </p> 
-            </div>
-    </div>
-    <div class="pokeImgContainerBig">
-        <img src="./img/pikachu.svg" class="pokeImgBig" >  
-    </div>
-    </div>
-    <div class="pokeFootBig">
-        <div class="pokeFootLinks">
-            
-            <h3 onclick="showAbout()">About</h3>
-            <h3 onclick="showStats()">Base Stats</h3>
-            <h3 onclick="showMoves()">Moves</h3>
+<div id="pokedexWrap" class="pokedexWrap">
+    <nav>
+        <img src="./img/pikachu.svg" class="pikachuImg">
+        <img src="./img/Pokedex.png" class="pokedexImg">
+    </nav>
 
+
+    <div class="pokedex" id="pokedex"> 
+        <div class="pokeWrap" id="pokeWrap">
         </div>
-
-        <div class="aboutWrap  d-none" id="about">
-            <div class="about">
-                <p>Main Type</p>
-                <p>Height</p>
-                <p>Weight</p>
-                <p>Abilities</p>
-                <p>BaseExperience</p>
-            </div>
-            <div class="aboutDetails">
-                <p>${PokemonType}</p>
-                <p>${PokemonHeight}M</p>
-                <p>${PokemonWeight}KG</p>
-                <p>${PokemonBaseAbilities}</p>
-                <p>${PokemonBaseExp}</p>
-            </div>
-        </div>
-
-        <div class="stats-wrap  d-none" id="stats">
-            <div class="statsList">
-                <p>HP</p>
-                <p>Attack</p>
-                <p>Defense</p>
-                <p>Sp. Atk</p>
-                <p>Sp. Def</p>
-                <p>Speed</p>
-            </div>
-            <div class="statsDetails">
-                <p>${PokemonHp}</p>
-                <p>${PokemonAttack}</p>
-                <p>${PokemonDefense}</p>
-                <p>${PokemonSpAtk}</p>
-                <p>${PokemonSpDef}</p>
-                <p>${PokemonSpeed}</p>
-            </div>
-            <div class="statsProgress">
-                <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="movesWrap d-none">
-            <h1>Moves</h1>
-            <div class="movesList">
-                <p class="badge rounded-pill bg-dark">${PokemonAttacks}</p>
-                
-            </div>
-        </div>
-        
     </div>
 </div>
-
-<div class="PokedexWrap">
-<nav>
-    <img src="./img/pikachu.svg" class="pikachuImg">
-    <img src="./img/Pokedex.png" class="pokedexImg">
-</nav>
-
-
-<div class="pokedex" id="pokedex"> 
-    <div class="pokeWrap" id="pokeWrap">
-        
-
-    </div>
-</div>
+<div id="pokeWrapBig" class="pokeWrapBig d-none">  
 </div>
 
 </body>
