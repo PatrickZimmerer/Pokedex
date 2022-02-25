@@ -7,7 +7,7 @@
     background-color: #c73c37fa;
 }*/
 .grass{
-    background-color: #36996D;
+    background-color: #36996D !important;
 }
 .grass-side{
     color: #157649;
@@ -16,7 +16,7 @@
     background-color: #198754;
 }
 .fire{
-    background-color: #f73f51fc;
+    background-color: #f73f51fc !important;
 }
 .fire-side{
     color: #8c2827bd;
