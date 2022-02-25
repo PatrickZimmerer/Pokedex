@@ -1,0 +1,180 @@
+@media(max-width: 1200px){
+    /* ---------- MOBILE STYLE MAIN PAGE ----------- */
+    .pokeImgBig:hover{
+        transform: scale3d(1.15, 1.15, 1.15) translateY(-25px) translateX(15px) !important;    
+    }
+}
+
+@media(max-width: 1000px){
+    /* ---------- MOBILE STYLE MAIN PAGE ----------- */
+
+    .pokeContainer{
+        width: 380px;
+    }
+    .pokeImg:hover{
+        transform: scale3d(1.17, 1.17, 1.17) translateX(-5px) translateY(-8px);
+    }
+    .pokeWrap{
+        padding: 0px 16px;
+    }
+
+    /* --------  MOBILE STYLE DETAILS PAGE ------- */
+    .pokeHeadBig img{
+        width: 48px;
+    }
+    .h2Big{
+        font-size: 4rem;
+        color: white;
+        font-weight: 700;
+    }
+    .idBig{
+        font-size: 3rem;
+        font-weight: 600;
+    }
+    .pokeTypeBig{
+        font-size: 20px;
+        width: 110px;
+        font-weight: 600;
+    }
+    .pokeImgBig{
+        margin-top: -50px;
+        margin-left: 60px;
+        height: 400px;
+    }
+}
+@media(max-width: 880px){
+    /* ---------- MOBILE STYLE MAIN PAGE ----------- */
+    .pokeContainer{
+        width: 420px;
+    }
+    .pokeImg:hover{
+        transform: scale3d(1.25, 1.25, 1.25) translateX(-25px) translateY(-10px);
+    }
+    .pokeWrap{
+        padding: 0px 16px;
+    }
+}
+@media(max-width: 700px){
+    /* --------  MOBILE STYLE DETAILS PAGE ------- */
+    .pokeHeadBig{
+        padding: 24px 24px 0px;
+    }
+    .pokeHeadBig img{
+        width: 42px;
+    }
+    .h2Big{
+        font-size: 3.5rem;
+        color: white;
+        font-weight: 600;
+    }
+    .idBig{
+        font-size: 2.5rem;
+        font-weight: 600;
+    }
+    .pokeTypeBig{
+        font-size: 18px;
+        width: 90px;
+        font-weight: 600;
+    }
+    .pokeBodyContainerBig{
+        padding: 24px 32px 0px;
+    }
+    .pokeImgBig{
+        margin-top: -50px;
+        margin-left: 0px;
+    }
+    .pokeImgBig:hover{
+        transform: scale3d(1.0, 1.0, 1.0) translateY(0) translateX(0) !important;    
+    }
+}
+
+@media(max-width: 500px){
+    /* ---------- MOBILE STYLE MAIN PAGE ----------- */
+    h2{
+        font-size: 20px !important;
+    }
+    .pokeContainer{
+        width: 380px;
+    }
+    div>p{
+        font-size: 26px;
+        font-weight: 500;
+    }
+    .pokeImg:hover{
+        transform: scale3d(1.17, 1.17, 1.17) translateX(-5px) translateY(-8px);
+    }
+    /* --------  MOBILE STYLE DETAILS PAGE ------- */
+    .pokeHeadBig{
+        padding: 16px 16px 0px;
+    }
+    .pokeHeadBig img{
+        width: 40px;
+    }
+    .h2Big{
+        font-size: 3rem;
+        color: white;
+        font-weight: 600;
+    }
+    .idBig{
+        font-size: 2rem;
+        font-weight: 600;
+    }
+    .pokeTypeBig{
+        font-size: 18px;
+        width: 70px;
+        font-weight: 600;
+    }
+    .pokeBodyContainerBig{
+        padding: 24px 16px 0px;
+    }
+    .pokeImgBig{
+        height: 300px;
+        margin-top: -50px;
+        margin-left: 0px;
+    }
+    .pokeFootBig{
+        padding: 16px;
+    }
+    .movesList p{
+        font-size: 17px;
+    }
+    .aboutWrap p{
+        font-size: 17px;
+    }
+    .stats-wrap p{
+        font-size: 17px;
+    }
+    .progress{
+       width: 90px;
+    }
+}
+@media(max-width: 400px){
+    /* ---------- MOBILE STYLE MAIN PAGE ----------- */
+    .pokeContainer{
+        width: 300px;
+        height: 220px;
+    }
+    .pokeImg{
+        height: 150px;
+        transform: scale3d(1.0, 1.0, 1.0) translateX(0px) translateY(0px);
+        transition: transform 200ms ease-in-out;
+    }
+    /* --------  MOBILE STYLE DETAILS PAGE ------- */
+    .pokeFootLinks h3{
+        font-size: 20px;
+    }
+    .movesList{
+        padding: 16px;
+    }
+    .movesList p{
+        font-size: 16px;
+        padding: 8px;
+        margin-right: 6px;
+    }
+    .aboutWrap p{
+        font-size: 16px;
+    }
+    .stats-wrap p{
+        font-size: 16px;
+    }
+}

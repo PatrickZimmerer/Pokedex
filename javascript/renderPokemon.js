@@ -1,3 +1,4 @@
+// ----------- RENDERS POKEMONS - MAINPAGE ---------------- //
 function renderPokemon(responseAsJson, PokemonId, PokemonName, PokemonType ,PokemonImg, i){
     getById('pokeWrap').innerHTML += ` 
     <div onclick="getPokemonDetails(${i})" id='container-${i}' class="pokeContainer">
@@ -30,12 +31,12 @@ function renderPokemon(responseAsJson, PokemonId, PokemonName, PokemonType ,Poke
     `;
     applyBackgrounds(responseAsJson, PokemonType, i);
 }
-
+// ----------- RENDERS POKEMONS - DETAILS PAGE ---------------- //
 function generateDetailsHTML(PokemonId, PokemonName, PokemonType, PokemonImg, PokemonHeight, PokemonWeight, PokemonBaseExp, i){
     return `
     <div class="pokeHeadBig">
         <div>
-            <img onclick="backToAll(${i})" src="./css/img/arrow_back_white_36dp.svg">
+            <img onclick="backToMainpage(${i})" src="./css/img/arrow_back_white_36dp.svg">
         </div>
         <div id="likeContainer">
             <img onclick="like()" id="notliked" src="./css/img/favorite_border_white_36dp.svg">

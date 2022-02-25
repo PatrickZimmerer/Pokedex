@@ -8,6 +8,7 @@ function getById(id){
     return document.getElementById(id);
 }
 
+// ---------- LOADS MORE POKEMON WHEN SCROLLED TO BOTTOM -----------------
 window.onscroll = async function loadMorePokemon() {
     if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) {
         atTheBottom++;
@@ -21,7 +22,7 @@ window.onscroll = async function loadMorePokemon() {
         }
     }
 }
-
+//----------- INITIALY LOADS POKEMON ----------------
 async function loadPokemon(){
     for (let i = 1; i < 22; i++) {
         let url = `https://pokeapi.co/api/v2/pokemon/${i}`;
@@ -31,7 +32,7 @@ async function loadPokemon(){
         console.log(responseAsJson)
     }
 }
-
+// ---------- GETS INFOS FOR MAINPAGE ----------
 function getPokemonInfos(responseAsJson, i){
     let PokemonId = responseAsJson['id']
     let PokemonName = responseAsJson['name'];
@@ -39,7 +40,7 @@ function getPokemonInfos(responseAsJson, i){
     let PokemonImg = responseAsJson['sprites']['other']['home']['front_default'];    
     renderPokemon(responseAsJson, PokemonId, PokemonName, PokemonType, PokemonImg, i);
 }
-
+// ----------- GETS INFOS FOR DETAILS PAGE -----------
 async function getPokemonDetails(i){
     PLINK_AUDIO.play();
     let url = `https://pokeapi.co/api/v2/pokemon/${i}`;
@@ -57,7 +58,7 @@ async function getPokemonDetails(i){
     getById('pokeWrapBig').innerHTML = generateDetailsHTML(PokemonId, PokemonName, PokemonType, PokemonImg, PokemonHeight, PokemonWeight, PokemonBaseExp, i);
     getMoreDetails(responseAsJson, PokemonType, PokemonStats)
 }
-
+// ---------- SHOWS POKEMON DETAILS -------------
 function showPokemonDetails(){
     getById("pokedexWrap").classList.add("d-none");
     getById('pokeWrapBig').classList.remove('d-none');

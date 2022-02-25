@@ -11,7 +11,7 @@ function dislike() {
     <img onclick="like()" id="notliked" src="./css/img/favorite_border_white_36dp.svg">
     `;
 }
-
+// -------- GETS INFOS FOR DETAILS PAGE ----------- //
 function getBaseAbilities(responseAsJson){
     let PokemonBaseAbilities = responseAsJson['abilities'];
     for (let i = 0; i < PokemonBaseAbilities.length; i++) {
@@ -21,7 +21,7 @@ function getBaseAbilities(responseAsJson){
         `;
     }
 }
-
+// -------- GETS DETAILS FOR DETAIL PAGE FOOT ----- //
 function getBaseStats(PokemonStats){
     for (let i = 0; i < PokemonStats.length; i++) {
         const PokemonStat = PokemonStats[i]['base_stat'];
@@ -62,8 +62,8 @@ function getMoreDetails(responseAsJson, PokemonType, PokemonStats){
     getPokemonMoves(responseAsJson, PokemonType);
     getBaseStats(PokemonStats);
 }
-
-async function backToAll(i){;
+// -------- GETS YOU BACK TO MAINPAGE ----- //
+async function backToMainpage(i){;
     PLINK_AUDIO.play();
     let url = `https://pokeapi.co/api/v2/pokemon/${i}`;
     let response = await fetch(url);
