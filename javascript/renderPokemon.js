@@ -91,7 +91,7 @@ function generateDetailsHTML(PokemonId, PokemonName, PokemonType, PokemonImg, Po
             </div>
 
             <div class="aboutDetails">
-                <p>${PokemonType}</p>
+                <p class="ucwords">${PokemonType}</p>
                 <p>${PokemonHeight} Meter</p>
                 <p>${PokemonWeight} KG </p>
                 <p class="ucwords" id="baseAbilities"></p>
