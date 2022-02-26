@@ -81,9 +81,6 @@ function showAbout(){
     getById('stats').classList.add('d-none');
     getById('moves').classList.add('d-none');
     getById('about').classList.remove('d-none');
-    getById('abouth3').classList.add('linksUl');
-    getById('statsh3').classList.remove('linksUl');
-    getById('movesh3').classList.remove('linksUl');
 }
 
 function showStats(){
@@ -91,9 +88,6 @@ function showStats(){
     getById('stats').classList.remove('d-none');
     getById('moves').classList.add('d-none');
     getById('about').classList.add('d-none');
-    getById('abouth3').classList.remove('linksUl');
-    getById('statsh3').classList.add('linksUl');
-    getById('movesh3').classList.remove('linksUl');
 }
 
 function showMoves(){
@@ -101,7 +95,4 @@ function showMoves(){
     getById('stats').classList.add('d-none');
     getById('moves').classList.remove('d-none');
     getById('about').classList.add('d-none');
-    getById('abouth3').classList.remove('linksUl');
-    getById('statsh3').classList.remove('linksUl');
-    getById('movesh3').classList.add('linksUl');
 }

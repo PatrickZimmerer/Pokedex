@@ -146,6 +146,7 @@
     }
     .progress{
        width: 90px;
+       margin-top: 13.2px 0px 13.2px ;
     }
 }
 @media(max-width: 400px){

@@ -74,9 +74,6 @@
     padding-top: 60px;
     padding-bottom: 24px;
 }
-.linksUl{
-    text-decoration: underline;
-}
 h3:hover{
     cursor: pointer;
     transition: ease-in-out 225ms;

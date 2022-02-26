@@ -76,9 +76,9 @@ function generateDetailsHTML(PokemonId, PokemonName, PokemonType, PokemonImg, Po
     <div class="pokeFootBig">
 
         <div class="pokeFootLinks">
-            <h3 id="abouth3" class="linksUl" onclick="showAbout()">About</h3>
-            <h3 id="statsh3" onclick="showStats()">Base Stats</h3>
-            <h3 id="movesh3" onclick="showMoves()">Moves</h3>
+            <h3 class="linksUl" onclick="showAbout()">About</h3>
+            <h3 onclick="showStats()">Base Stats</h3>
+            <h3 onclick="showMoves()">Moves</h3>
         </div>
 
         <div class="aboutWrap" id="about">
